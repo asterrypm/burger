@@ -22,7 +22,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  database: "movie_planner_db"
+  database: "burger_db"
 });
 
 connection.connect(function(err) {
