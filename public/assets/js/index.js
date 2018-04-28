@@ -1,5 +1,4 @@
 
-
 // On ready
 $(function() {
   // Handle Post Requests For new burgers
@@ -8,7 +7,7 @@ $(function() {
     // make an object with that burger's name inside of it
   var newBurger = {
     burger_name: $("#burger-name").val().trim()
-
+  }
   };
     // do a post request with jquery
   $.ajax("/api/burgers/add", {
@@ -19,7 +18,7 @@ $(function() {
       console.log("New Burger added");
       location.reload();
     }
-  );
+  });
 
   // Handle PUT request for devoured burgers
   $('.js-devour-handler').on("click", function(event) {
@@ -40,5 +39,6 @@ $(function() {
         console.log("devoured burger");
         location.reload();
       }
-    );
+
   });
+ });
