@@ -15,7 +15,7 @@ var connection;
   };
   
 // Make connection.
-connection.connect(); {
+connection.connect(); 
 
 
 // Export connection for our ORM to use.
