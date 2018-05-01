@@ -22,7 +22,7 @@ router.post("/api/burgers/add", function(req, res) {
   var burgerObject = {
     burger_name: req.body.burger_name
   };
-  burger.create(burgerObject, function(res) {
+  burger.create(burgerObject, function(result) {
     res.status(200).send();
   });
 });
@@ -35,9 +35,9 @@ router.put("/api/burgers/devoured/:id", function(req, res) {
   };
   console.log("updated burger", updatedBurger )
 
-  burger.updateOne(updatedBurger).then(function(result) {
-    console.log("REsult", result);
-    res.redirect("/");
+  burger.update(updatedBurger, function(result) {
+    console.log("Result", result);
+    res.status(200).send();
     
   });
 
@@ -45,3 +45,4 @@ router.put("/api/burgers/devoured/:id", function(req, res) {
 
 // Export routes for server.js to use.
 module.exports = router;
+

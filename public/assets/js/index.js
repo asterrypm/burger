@@ -1,13 +1,13 @@
 $(function () {
 
-  $('#add-burger').on("click", function () {
+  $('#add-burger').on("submit", function () {
     event.preventDefault();
     var newBurger = {
       burger_name: $("#burger-name").val().trim(),
       devoured: false
     };
 
-    $.ajax("/api/burgers/", {
+    $.ajax("/api/burgers/add", {
       type: "POST",
       data: newBurger
     }).then(
