@@ -25,7 +25,7 @@ $(function () {
       devoured: true
     };
 
-    $.ajax("/api/burgers/devoured/:id", {
+    $.ajax("/api/burgers/devoured/" + id, {
       type: "PUT",
       data: devoured
     }).then(

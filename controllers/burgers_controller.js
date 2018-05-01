@@ -22,8 +22,8 @@ router.post("/api/burgers/add", function(req, res) {
   var burgerObject = {
     burger_name: req.body.burger_name
   };
-  burger.create(burgerObject, function(result) {
-    res.status(201).send();
+  burger.create(burgerObject, function(res) {
+    res.status(200).send();
   });
 });
 
@@ -33,10 +33,14 @@ router.put("/api/burgers/devoured/:id", function(req, res) {
     id: req.params.id,
     devoured: true
   };
+  console.log("updated burger", updatedBurger )
 
-  burger.update(updatedBurger, function(result) {
-    res.status(204).send();
+  burger.updateOne(updatedBurger).then(function(result) {
+    console.log("REsult", result);
+    res.redirect("/");
+    
   });
+
 });
 
 // Export routes for server.js to use.
